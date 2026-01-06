@@ -1,0 +1,129 @@
+:root {
+    --clr-primary: #bd070a;
+}
+
+/* use a more-intuitive box-sizing model.*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0; /*added by myself*/
+    font: inherit;
+}
+
+/* remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* allow percentage-based heights in the application */
+html, body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* typographic tweaks 1.accessible line-height 2.improve text rendering */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* improve media defaults */
+img, 
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* general */
+body {
+    --gradient: #0002 0 0.125%, #0000 0 9.875%, #0002 0 10%;
+    background-color: #000;
+    /* background: repeating-linear-gradient(var(--gradient)),
+    repeating-linear-gradient(to right, var(--gradient)); */
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* width: 90vmin;
+    height: 90vmin; */
+    min-height: 100vh;
+}
+
+/* lakhey */
+#lakhey {
+    width: 50vmin;
+    height: 20vmin;
+
+    position: relative;
+}
+.lakhey {
+    background-color: var(--clr-primary);
+    /* clip-path: polygon(50% 0%, 80% 20%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%); */
+}
+
+.lakhey .face::before,
+.lakhey .face::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    background: var(--clr-primary);
+}
+
+.lakhey .face::before {
+    width: 50vmin;
+    height: 20vmin;
+
+    top: -90%;
+    border-bottom: none;
+    border-radius: 20vmin 20vmin 0 0;
+
+    border: 1px solid var(--clr-primary);
+}
+
+.lakhey .face::after {
+    width: 50vmin;
+    height: 20vmin;
+
+    bottom: -90%;
+
+    border-bottom: none;
+    border-radius: 0 0 20vmin 20vmin;
+
+    border: 1px solid var(--clr-primary);
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+.outer {
+    width: 100px;
+    height: 100px;
+
+    background-color: white;
+
+    border: 1px dotted black;
+
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
