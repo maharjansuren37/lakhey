@@ -1,5 +1,8 @@
 :root {
     --clr-primary: #bd070a;
+    --clr-red-1: #a40403;
+    --clr-green: #0d2402;
+    --clr-dark-yellow: #966237;
 }
 
 /* use a more-intuitive box-sizing model.*/
@@ -73,41 +76,72 @@ body {
 
     position: relative;
 }
+
+.lakhey div {
+    position: absolute;
+}
+
 .lakhey {
     background-color: var(--clr-primary);
     /* clip-path: polygon(50% 0%, 80% 20%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%); */
 }
 
-.lakhey .face::before,
-.lakhey .face::after {
+.face::before,
+.face::after {
     content: '';
     display: block;
-    position: absolute;
+    /* position: absolute; */
 
     background: var(--clr-primary);
 }
 
-.lakhey .face::before {
+.face::before {
     width: 50vmin;
     height: 20vmin;
 
-    top: -90%;
+    top: -20%;
     border-bottom: none;
     border-radius: 20vmin 20vmin 0 0;
 
     border: 1px solid var(--clr-primary);
 }
 
-.lakhey .face::after {
+.face::after {
     width: 50vmin;
     height: 20vmin;
 
-    bottom: -90%;
+    bottom: -10%;
 
     border-bottom: none;
     border-radius: 0 0 20vmin 20vmin;
 
     border: 1px solid var(--clr-primary);
+}
+
+/* forehead */
+
+.forehead {
+    position: relative;
+}
+
+/* .fires {
+    position: absolute;
+} */
+
+.fire {
+    width: 14px;
+    height: 20px;
+    background-color: var(--clr-red-1);
+
+    border: 1px solid white;
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+.fire-1 {
+    top: 10%;
+    left: 30%;
 }
 
 .circle {
@@ -122,8 +156,77 @@ body {
 
     border: 1px dotted black;
 
-    position: absolute;
-    top: -50%;
+    /* position: absolute; */
+    top: -30%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.inner {
+    width: 80px;
+    height: 80px;
+
+    background-color: var(--clr-green);
+
+    /* position: absolute; */
+    top: -35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.inner::before {
+    content: '';
+    width: 73px;
+    height: 73px;
+
+    border: 1px solid white;
+    border-radius: 100%;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-2 {
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--clr-dark-yellow);
+
+    /* position: absolute; */
+    top: -35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-2::before {
+    content: '';
+
+    position: absolute;
+    top: -15%;
+    left: 23%;
+    /* transform: translate(-50%, -50%); */
+
+    width: 0;
+    height: 0;
+
+    border: 10px solid transparent;
+    border-bottom: 16px solid var(--clr-red-1);
+
+}
+
+.inner-2::after {
+content: '';
+
+    position: absolute;
+    top: 48%;
+    left: 23%;
+
+    width: 0;
+    height: 0;
+
+    border: 10px solid transparent;
+    border-top: 16px solid var(--clr-red-1);
 }
